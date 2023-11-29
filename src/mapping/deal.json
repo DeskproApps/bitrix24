@@ -1,0 +1,73 @@
+{
+  "titleKeyName": "TITLE",
+  "idKey": "ID",
+  "externalUrl": "__main_url__/crm/deal/list/",
+  "externalChildUrl": "__main_url__/crm/deal/details/",
+  "internalChildUrl": "/view/single/Deal/",
+  "internalUrl": "/view/list/Deal/",
+  "title": "Deal",
+  "create": [
+    {
+      "name": "TITLE",
+      "label": "Title",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "CLOSEDATE",
+      "label": "Close Date",
+      "type": "date"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "",
+        "label": "",
+        "type": "product"
+      }
+    ],
+    [
+      {
+        "name": "TYPE_ID",
+        "label": "Type",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "OPPORTUNITY",
+        "label": "Total",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "TAX_VALUE",
+        "label": "Total Tax",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "CLOSEDATE",
+        "label": "Due Date",
+        "type": "date"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "OPPORTUNITY",
+        "label": "Total",
+        "type": "currency"
+      },
+      {
+        "name": "CLOSEDATE",
+        "label": "Close Date",
+        "type": "date"
+      }
+    ]
+  ]
+}

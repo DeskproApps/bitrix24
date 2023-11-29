@@ -1,4 +1,3 @@
-My App
-======
+# Bitrix24 App
 
-todo: add a description that will appear alongside your app in Deskpro admin
+Boost collaboration, automate sales, manage projects, and create websites, all seamlessly with Bitrix24

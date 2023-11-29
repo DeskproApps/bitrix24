@@ -1,0 +1,114 @@
+{
+  "titleKeyName": "NAME",
+  "idKey": "ID",
+  "externalUrl": "__main_url__/crm/contact/list/",
+  "externalChildUrl": "__main_url__/crm/contact/details/",
+  "internalChildUrl": "/view/single/Contact/",
+  "title": "Contact",
+  "create": [
+    {
+      "name": "NAME",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "EMAIL.0.VALUE",
+      "label": "Email",
+      "type": "text"
+    },
+    {
+      "name": "PHONE.0.VALUE",
+      "label": "Phone",
+      "type": "text"
+    },
+    {
+      "name": "WEB.0.VALUE",
+      "label": "Website",
+      "type": "text"
+    },
+    {
+      "name": "ADDRESS",
+      "label": "Address Line",
+      "type": "text"
+    },
+    {
+      "name": "ADDRESS_POSTAL_CODE",
+      "label": "Postal Code",
+      "type": "text"
+    },
+    {
+      "name": "ADDRESS_CITY",
+      "label": "City",
+      "type": "text"
+    },
+    {
+      "name": "ADDRESS_PROVINCE",
+      "label": "Province",
+      "type": "text"
+    },
+    {
+      "name": "ADDRESS_COUNTRY",
+      "label": "Country",
+      "type": "text"
+    }
+  ],
+  "single": [
+    [
+      {
+        "name": "ID",
+        "label": "Id",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "EMAIL",
+        "label": "Email",
+        "type": "value_type"
+      }
+    ],
+    [
+      {
+        "name": "PHONE",
+        "label": "Phone",
+        "type": "value_type"
+      }
+    ],
+    [
+      {
+        "name": "address",
+        "label": "Address",
+        "type": "address"
+      }
+    ],
+    [
+      {
+        "name": "WEB",
+        "label": "Website",
+        "type": "website"
+      }
+    ],
+    [
+      {
+        "name": "LAST_ACTIVITY_TIME",
+        "label": "Last Activity",
+        "type": "date"
+      }
+    ]
+  ],
+  "list": [
+    [
+      {
+        "name": "TYPE_ID",
+        "label": "Type",
+        "type": "text"
+      },
+      {
+        "name": "LAST_ACTIVITY_TIME",
+        "label": "Last Activity",
+        "type": "date"
+      }
+    ]
+  ]
+}
