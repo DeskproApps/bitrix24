@@ -28,6 +28,13 @@
       "isBackendOnly": false,
       "validationPattern": "^https:\\/\\/.*\\..*$",
       "order": 20
+    },
+    "verify": {
+      "title": "",
+      "type": "string",
+      "options": {
+        "entrypoint": "#/verify"
+      }
     }
   },
   "entityAssociations": {

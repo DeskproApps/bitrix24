@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
+  Select,
   useDeskproAppEvents,
   useDeskproLatestAppContext,
   useInitialisedDeskproAppClient,
@@ -41,7 +42,6 @@ import { FieldMappingInput } from "../FieldMappingInput/FieldMappingInput";
 import { LoadingSpinnerCenter } from "../LoadingSpinnerCenter/LoadingSpinnerCenter";
 import { parseJsonErrorMessage } from "../../utils/utils";
 import { InputWithTitleRegister } from "../InputWithTitle/InputWithTitleRegister";
-import { DropdownSelect } from "../DropdownSelect/DropdownSelect";
 import { HorizontalDivider } from "../HorizontalDivider/HorizontalDivider";
 import { IDeal, IDealCreate } from "../../types/deal";
 import { useQueryMutationWithClient } from "../../hooks/useQueryMutationClient";
@@ -368,14 +368,18 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
                 <H5 style={{ fontSize: "14px", marginTop: "2px" }}>
                   Line Item {i + 1}
                 </H5>
-                <DropdownSelect
-                  value={watch(`PRODUCTS.${i}.PRODUCT_ID` as keyof IDeal) ?? ""}
-                  title="Product"
-                  required={true}
-                  data={productsQuery.data?.result.map((e) => ({
-                    key: e.NAME,
-                    value: e.ID,
-                  }))}
+                <Select<string>
+                  options={
+                    productsQuery.data?.result.map((e) => ({
+                      label: e.NAME,
+                      value: e.ID,
+                      type: "value",
+                      key: e.ID,
+                    })) ?? []
+                  }
+                  value={watch(
+                    `PRODUCTS.${i}.PRODUCT_ID` as keyof IDeal
+                  ).toString()}
                   onChange={(e) =>
                     setValue(`PRODUCTS.${i}.PRODUCT_ID` as keyof IDeal, e)
                   }

@@ -9,7 +9,6 @@ import {
 
 import { DropdownData, FieldMappingInputs } from "../../types/types";
 import { DateField } from "../DateField/DateField";
-import { DropdownSelect } from "../DropdownSelect/DropdownSelect";
 import { InputWithTitleRegister } from "../InputWithTitle/InputWithTitleRegister";
 import { H1, Stack, TextArea } from "@deskpro/deskpro-ui";
 import { useDeskproAppTheme } from "@deskpro/app-sdk";
@@ -101,21 +100,6 @@ export const FieldMappingInput = forwardRef(
                 </Stack>
               );
 
-            case "dropdown": {
-              if (!dropdownData) return <div />;
-
-              return (
-                <DropdownSelect
-                  title={field.label}
-                  error={!!errors[field.name]}
-                  required={field.required}
-                  data={dropdownData[field.name]}
-                  onChange={(e) => setValue(field.name, e)}
-                  value={watch(field.name)}
-                  multiple={field.multiple}
-                />
-              );
-            }
             case "date":
               return (
                 <DateField

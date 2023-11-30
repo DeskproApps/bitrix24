@@ -96,7 +96,6 @@ export const FieldMapping = ({
                   ...(fields.length > 0
                     ? { color: theme?.colors.cyan100 }
                     : {}),
-                  marginBottom: "2px",
                 }}
                 onClick={() => navigate(createPage)}
               >

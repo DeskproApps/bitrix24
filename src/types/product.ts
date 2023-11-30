@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export interface IProductRow {
   ID: string;
   OWNER_ID: string;

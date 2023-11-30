@@ -21,6 +21,7 @@ import { CreateObject } from "./pages/Create/Object";
 import { EditObject } from "./pages/Edit/Edit";
 import { FindOrCreate } from "./pages/FindOrCreate/FindOrCreate";
 import { ViewObject } from "./pages/View/Object";
+import { Verify } from "./pages/Verify/Verify";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/">
                     <Route path="redirect" element={<Redirect />} />
                     <Route index element={<Main />} />
+                    <Route path="verify" element={<Verify />} />
                     <Route path="create">
                       <Route path=":objectName" element={<CreateObject />} />
                       <Route
@@ -47,7 +49,7 @@ function App() {
                         element={<EditObject />}
                       />
                     </Route>
-                    <Route path="/findOrCreate" element={<FindOrCreate />} />
+                    <Route path="findOrCreate" element={<FindOrCreate />} />
                     <Route path="admin"></Route>
                     <Route path="view">
                       <Route
