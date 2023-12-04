@@ -53,7 +53,7 @@ export const Verify = () => {
           style={
             response.type === "error"
               ? {
-                  color: theme?.colors.red40,
+                  color: theme?.colors.red80,
                 }
               : {
                   color: theme?.colors.green80,
