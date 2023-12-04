@@ -50,7 +50,7 @@
   "proxy": {
     "whitelist": [
       {
-        "url": "https://.*/rest/.*",
+        "url": "https://.*\\.bitrix24\\..*/rest/.*",
         "methods": [
           "GET",
           "POST"
