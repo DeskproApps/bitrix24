@@ -26,7 +26,7 @@ export const Verify = () => {
 
     try {
       const response = await fetch(
-        context?.settings.rest_api_url + "/user.current.json"
+        context?.settings.rest_api_url + "user.current.json"
       );
 
       const text = await response.text();
