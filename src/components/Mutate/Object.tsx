@@ -267,9 +267,8 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
 
     reset({
       NAME: context.data.user.name,
-      EMAIL: context.data.user.primaryEmail,
+      EMAIL: [{ VALUE: context.data.user.primaryEmail }],
     } as IContact);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEditMode, objectName]);
 
