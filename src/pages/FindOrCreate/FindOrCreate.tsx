@@ -9,7 +9,7 @@ export const FindOrCreate = ({ pageParam }: { pageParam?: 0 | 1 }) => {
   const [page, setPage] = useState<0 | 1>(pageParam || 0);
 
   return (
-    <Stack vertical>
+    <Stack vertical style={{ padding: "8px" }}>
       <Stack style={{ alignSelf: "center" }}>
         <TwoButtonGroup
           selected={

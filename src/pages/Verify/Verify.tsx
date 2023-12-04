@@ -56,10 +56,14 @@ export const Verify = () => {
                   color: theme?.colors.red40,
                 }
               : {
-                  color: theme?.colors.green40,
+                  color: theme?.colors.green80,
                 }
           }
-        ></H5>
+        >
+          {response.type === "error"
+            ? "Error, please make sure to follow the Setup tutorial"
+            : "Success!"}
+        </H5>
       )}
     </Stack>
   );

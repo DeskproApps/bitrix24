@@ -223,7 +223,7 @@ export const ViewObject = () => {
   }
 
   return (
-    <Stack style={{ width: "100%" }} vertical gap={10}>
+    <Stack style={{ width: "100%", padding: "8px" }} vertical gap={10}>
       <FieldMapping
         fields={object}
         metadata={correctJson[objectView]}

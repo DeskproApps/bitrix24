@@ -152,7 +152,7 @@ export const Main = () => {
   const deals = dealsByContactIdQuery.data?.result;
 
   return (
-    <Stack style={{ width: "100%" }} vertical gap={10}>
+    <Stack style={{ width: "100%", padding: "8px" }} vertical gap={10}>
       <FieldMapping
         fields={[contact]}
         metadata={contactJson.single}
