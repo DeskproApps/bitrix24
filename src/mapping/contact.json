@@ -100,8 +100,8 @@
   "list": [
     [
       {
-        "name": "TYPE_ID",
-        "label": "Type",
+        "name": "ADDRESS_COUNTRY",
+        "label": "Country",
         "type": "text"
       },
       {
