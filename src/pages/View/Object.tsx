@@ -187,7 +187,11 @@ export const ViewObject = () => {
     return [
       {
         ...objectQuery.data.result,
-        PRODUCTS: productsByDealIdQuery.data.result ?? [],
+        PRODUCTS:
+          productsByDealIdQuery.data.result.map((e) => ({
+            ...e,
+            FINAL_PRICE: e.PRICE * e.QUANTITY,
+          })) ?? [],
       },
     ];
   }, [objectName, objectQuery.data, objectView, productsByDealIdQuery.data]);

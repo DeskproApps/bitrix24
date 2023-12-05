@@ -15,7 +15,7 @@
         "type": "number"
       },
       {
-        "name": "PRICE",
+        "name": "FINAL_PRICE",
         "label": "",
         "type": "currency"
       }
@@ -37,8 +37,8 @@
         "type": "number"
       },
       {
-        "name": "PRICE_BRUTTO",
-        "label": "Gross Price",
+        "name": "PRICE_NETTO",
+        "label": "Net Price",
         "type": "currency"
       }
     ]

@@ -442,10 +442,10 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
             disabled={submitMutation.isLoading}
             intent="primary"
           ></Button>
-          {!!objectId && (
+          {(!!objectId || ["Deal", "Activity"].includes(objectName)) && (
             <Button
               text="Cancel"
-              onClick={() => navigate(`/redirect`)}
+              onClick={() => navigate(-1)}
               intent="secondary"
             ></Button>
           )}
