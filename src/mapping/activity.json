@@ -1,0 +1,39 @@
+{
+  "title": "Tasks",
+  "list": [
+    [
+      {
+        "name": "DESCRIPTION",
+        "label": "Description",
+        "type": "text"
+      }
+    ],
+    [
+      {
+        "name": "COMPLETED",
+        "label": "Completed",
+        "type": "label"
+      },
+      {
+        "name": "DEADLINE",
+        "label": "Due Date",
+        "type": "date"
+      }
+    ]
+  ],
+  "create": [
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "name": "deadline",
+      "label": "Due Date",
+      "type": "date",
+      "required": true
+    }
+  ],
+  "single": []
+}

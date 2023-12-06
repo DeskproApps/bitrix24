@@ -1,0 +1,46 @@
+{
+  "create": [
+    {}
+  ],
+  "single": [
+    [
+      {
+        "name": "ORIGINAL_PRODUCT_NAME",
+        "label": "",
+        "type": "text"
+      },
+      {
+        "name": "PRODUCT_ID",
+        "label": "Product Id",
+        "type": "number"
+      },
+      {
+        "name": "FINAL_PRICE",
+        "label": "",
+        "type": "currency"
+      }
+    ],
+    [
+      {
+        "name": "QUANTITY",
+        "label": "Quantity",
+        "type": "number"
+      },
+      {
+        "name": "MEASURE_NAME",
+        "label": "Measure",
+        "type": "text"
+      },
+      {
+        "name": "TAX_RATE",
+        "label": "Tax",
+        "type": "number"
+      },
+      {
+        "name": "PRICE_NETTO",
+        "label": "Net Price",
+        "type": "currency"
+      }
+    ]
+  ]
+}
