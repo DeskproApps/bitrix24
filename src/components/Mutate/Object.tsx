@@ -98,6 +98,15 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     reset,
   } = useForm<Partial<IDealCreate | IContact | ICreateActivity>>({
     resolver: zodResolver(schema as ZodTypeAny),
+    defaultValues: {
+      PRODUCTS: [
+        {
+          QUANTITY: 0,
+          PRICE: 0,
+          PRODUCT_ID: 0,
+        },
+      ],
+    },
   });
 
   const products = watch("PRODUCTS");
