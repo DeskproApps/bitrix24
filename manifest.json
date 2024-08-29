@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/bitrix24",
   "title": "Bitrix24",
   "description": "Boost collaboration, automate sales, manage projects, and create websites, all seamlessly with Bitrix24",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
