@@ -8,7 +8,11 @@ import { Button, H5, Stack } from "@deskpro/deskpro-ui";
 import { useState } from "react";
 
 export const Verify = () => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<never, {
+    rest_api_url: string,
+    main_url: string,
+    verify: string,
+  }>();
   const { client } = useDeskproAppClient();
   const { theme } = useDeskproAppTheme();
   const [response, setResponse] = useState<{
@@ -53,11 +57,11 @@ export const Verify = () => {
           style={
             response.type === "error"
               ? {
-                  color: theme?.colors.red80,
-                }
+                color: theme?.colors.red80,
+              }
               : {
-                  color: theme?.colors.green80,
-                }
+                color: theme?.colors.green80,
+              }
           }
         >
           {response.type === "error"

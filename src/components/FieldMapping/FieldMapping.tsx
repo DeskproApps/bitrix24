@@ -69,7 +69,11 @@ export const FieldMapping = ({
   const { theme } = useDeskproAppTheme();
   const { mapFieldValues } = useMapFieldValues();
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<never, {
+    rest_api_url: string,
+    main_url: string,
+    verify: string,
+  }>();
 
   return (
     <Stack vertical gap={10} style={{ width: "100%" }}>
@@ -105,7 +109,7 @@ export const FieldMapping = ({
           </Stack>
           {externalUrl && (
             <ExternalIconLink
-              href={substitutePlaceholders(externalUrl, context?.settings)}
+              href={substitutePlaceholders(externalUrl, context?.settings ?? {})}
               icon={<AppLogo />}
             ></ExternalIconLink>
           )}
@@ -136,7 +140,7 @@ export const FieldMapping = ({
                   href={
                     substitutePlaceholders(
                       externalChildUrl,
-                      context?.settings
+                      context?.settings ?? {}
                     ) +
                     field[idKey] +
                     "/"

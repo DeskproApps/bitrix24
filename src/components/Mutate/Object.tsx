@@ -60,7 +60,7 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
   const navigate = useNavigate();
   const [schema, setSchema] = useState<ZodTypeAny | null>(null);
   const { linkContact } = useLinkContact();
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{ user: { name: string, primaryEmail: string } }, never>();
 
   const { getLinkedContact } = useLinkContact();
 
@@ -166,12 +166,12 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     //@ts-ignore
     (client, data: any) => {
       switch (
-        `${objectName}-${isEditMode}` as
-          | "Contact-false"
-          | "Contact-true"
-          | "Deal-false"
-          | "Deal-true"
-          | "Activity-false"
+      `${objectName}-${isEditMode}` as
+      | "Contact-false"
+      | "Contact-true"
+      | "Deal-false"
+      | "Deal-true"
+      | "Activity-false"
       ) {
         case "Contact-false":
           return createContact(client, data as IContact);
@@ -179,12 +179,10 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
         case "Activity-false":
           return createActivity(
             client,
-            `ownerTypeId=${data.ownerTypeId}&ownerId=${
-              data.ownerId
+            `ownerTypeId=${data.ownerTypeId}&ownerId=${data.ownerId
             }&description=${encodeURIComponent(
               data.description
-            )}&responsibleId=${data.responsibleId}${
-              data.deadline ? `&deadline=${data.deadline}` : ""
+            )}&responsibleId=${data.responsibleId}${data.deadline ? `&deadline=${data.deadline}` : ""
             }`
           );
 
@@ -275,8 +273,8 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     if (isEditMode || objectName !== "Contact" || !context) return;
 
     reset({
-      NAME: context.data.user.name,
-      EMAIL: [{ VALUE: context.data.user.primaryEmail }],
+      NAME: context?.data?.user.name,
+      EMAIL: [{ VALUE: context?.data?.user.primaryEmail }],
     } as IContact);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isEditMode, objectName]);
