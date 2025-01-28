@@ -5,7 +5,7 @@ import {
 } from "@deskpro/app-sdk";
 import { AnyIcon, Button, Checkbox, Input, Stack } from "@deskpro/deskpro-ui";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useDebounce from "../../hooks/debounce";
 import { useLinkContact } from "../../hooks/hooks";
@@ -59,7 +59,7 @@ export const LinkContact = () => {
     <Stack gap={10} style={{ width: "100%" }} vertical>
       <Stack vertical gap={6} style={{ width: "100%" }}>
         <Input
-          onChange={(e) => setPrompt(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setPrompt(e.target.value)}
           value={prompt}
           placeholder="Enter Email Address"
           type="text"

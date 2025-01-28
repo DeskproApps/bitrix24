@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { forwardRef } from "react";
+import { ChangeEvent, forwardRef } from "react";
 import { FieldErrorsImpl } from "react-hook-form";
 import {
   UseFormRegister,
@@ -84,7 +84,7 @@ export const FieldMappingInput = forwardRef(
                     variant="inline"
                     value={watch(field.name)}
                     error={!!errors[field.name]}
-                    onChange={(e) => setValue(field.name, e.target.value)}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => setValue(field.name, e.target.value)}
                     placeholder="Enter text here..."
                     title={field.label}
                     {...attributes}

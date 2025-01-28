@@ -7,33 +7,33 @@ import { useNavigate } from "react-router-dom";
 import { query } from "../utils/query";
 
 export const useLinkContact = () => {
-  const { context } = useDeskproLatestAppContext();
+  const { context } = useDeskproLatestAppContext<{user: {id: number}}, never>();
   const { client } = useDeskproAppClient();
   const [isLinking, setIsLinking] = useState(false);
   const navigate = useNavigate();
 
-  const deskproUser = context?.data.user;
+  const deskproUser = context?.data?.user;
 
   const linkContact = useCallback(
     async (contactId: string) => {
-      if (!context || !contactId || !client) return;
+      const deskproUser = context?.data?.user;
+      if (!context || !contactId || !client || !deskproUser) return;
 
       setIsLinking(true);
 
-      const deskproUser = context?.data.user;
 
       const getEntityAssociationData = (await client
-        ?.getEntityAssociation("bitrixContacts", deskproUser.id)
+        ?.getEntityAssociation("bitrixContacts", String(deskproUser.id))
         .list()) as string[];
 
       if (getEntityAssociationData.length > 0) {
         await client
-          ?.getEntityAssociation("bitrixContacts", deskproUser.id)
+          ?.getEntityAssociation("bitrixContacts", String(deskproUser.id))
           .delete(getEntityAssociationData[0]);
       }
 
       await client
-        ?.getEntityAssociation("bitrixContacts", deskproUser.id)
+        ?.getEntityAssociation("bitrixContacts", String(deskproUser.id))
         .set(contactId);
 
       query.clear();
@@ -50,7 +50,7 @@ export const useLinkContact = () => {
     if (!client || !deskproUser) return;
 
     return await client
-      .getEntityAssociation("bitrixContacts", deskproUser.id)
+      .getEntityAssociation("bitrixContacts", String(deskproUser.id))
       .list();
   }, [client, deskproUser]);
 
@@ -62,7 +62,7 @@ export const useLinkContact = () => {
     if (!id) return;
 
     await client
-      .getEntityAssociation("bitrixContacts", deskproUser.id)
+      .getEntityAssociation("bitrixContacts", String(deskproUser?.id))
       .delete(id);
   }, [client, context, deskproUser, getLinkedContact]);
 
