@@ -47,7 +47,7 @@
     "verify": {
       "title": "",
       "type": "app_embedded",
-      "options": { "entrypoint": "#/verify", "height": 30},
+      "options": { "entrypoint": "#/verify", "height": 60},
       "isRequired": false,
       "isBackendOnly": false,
       "order": 40
