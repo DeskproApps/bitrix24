@@ -15,12 +15,13 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import { LoadingSpinner } from "@deskpro/app-sdk";
 import { Main } from "./pages/Main";
 import { queryClient } from "./query";
+import { QueryClientProvider, QueryErrorResetBoundary } from "@tanstack/react-query";
 import { Redirect } from "./components/Redirect/Redirect";
 import { Suspense } from "react";
 import { Verify } from "./pages/Verify/Verify";
 import { ViewObject } from "./pages/View/Object";
-import { QueryClientProvider, QueryErrorResetBoundary } from "@tanstack/react-query";
 import LoadingPage from "./pages/loading";
+import LoginPage from "./pages/login";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/">
                     <Route path="redirect" element={<Redirect />} />
                     <Route index element={<LoadingPage />} />
+                    <Route path="login" element={<LoginPage />} />
                     <Route path="home" element={<Main />} />
                     <Route path="verify" element={<Verify />} />
                     <Route path="create">
