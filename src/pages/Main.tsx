@@ -34,16 +34,12 @@ export const Main = () => {
   const { getLinkedContact, unlinkContact, linkContact } = useLinkContact();
 
   useInitialisedDeskproAppClient((client) => {
+    
     client.setTitle("Bitrix24");
 
-    client.registerElement("homeButton", {
-      type: "home_button",
-    });
-
     client.deregisterElement("menuButton");
-
+    client.deregisterElement("homeButton");
     client.deregisterElement("link");
-
     client.deregisterElement("plusButton");
 
     client.registerElement("menuButton", {
@@ -74,9 +70,6 @@ export const Main = () => {
             unlinkContact().then(() => navigate("/findOrCreate"));
 
             break;
-          case "homeButton":
-            navigate("/redirect");
-            break;
         }
       },
     },
@@ -97,7 +90,6 @@ export const Main = () => {
 
       setContactId(linkedContact[0]);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context]);
 
   const contactQuery = useQueryWithClient(

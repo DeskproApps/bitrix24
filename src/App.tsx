@@ -20,6 +20,7 @@ import { Suspense } from "react";
 import { Verify } from "./pages/Verify/Verify";
 import { ViewObject } from "./pages/View/Object";
 import { QueryClientProvider, QueryErrorResetBoundary } from "@tanstack/react-query";
+import LoadingPage from "./pages/loading";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
                 <Routes>
                   <Route path="/">
                     <Route path="redirect" element={<Redirect />} />
-                    <Route index element={<Main />} />
+                    <Route index element={<LoadingPage />} />
+                    <Route path="home" element={<Main />} />
                     <Route path="verify" element={<Verify />} />
                     <Route path="create">
                       <Route path=":objectName" element={<CreateObject />} />
@@ -54,7 +56,6 @@ function App() {
                       />
                     </Route>
                     <Route path="findOrCreate" element={<FindOrCreate />} />
-                    <Route path="admin"></Route>
                     <Route path="view">
                       <Route
                         path=":objectView/:objectName/:objectId"
