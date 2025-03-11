@@ -47,7 +47,7 @@ export default function useLogin(): UseLogin {
         const mode = context?.settings.use_deskpro_saas ? 'global' : 'local';
 
         const clientId = context?.settings.client_id;
-        if (mode === 'local' && typeof clientId !== 'string') {
+        if (mode === 'local' && (typeof clientId !== 'string' || clientId.trim() === "")) {
             // Local mode requires a clientId.
             setError("A client ID is required");
             return
