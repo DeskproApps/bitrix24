@@ -23,18 +23,22 @@ import dealJson from "../mapping/deal.json";
 
 import { IContact } from "../types/contact";
 import { IDeal } from "../types/deal";
+import { ContextData, ISettings } from "../types/settings";
+import { useLogout } from "../hooks/useLogout";
 
 export const Main = () => {
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
-  const [contactId, setContactId] = useState<string | null | undefined>(
-    undefined
-  );
+  const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
+  const [contactId, setContactId] = useState<string | null | undefined>(undefined);
+
+  const { logoutActiveUser } = useLogout()
+  const isUsingOAuth = context?.settings?.use_rest_api_url !== true
+
 
   const { getLinkedContact, unlinkContact, linkContact } = useLinkContact();
 
   useInitialisedDeskproAppClient((client) => {
-    
+
     client.setTitle("Bitrix24");
 
     client.deregisterElement("menuButton");
@@ -48,10 +52,18 @@ export const Main = () => {
         {
           title: "Unlink Contact",
           payload: {
-            type: "changePage",
+            type: "unlink",
             page: "/",
           },
         },
+        ...(context?.settings.use_rest_api_url !== true
+          ? [
+            {
+              title: "Logout",
+              payload: { type: "logout" },
+            },
+          ]
+          : [])
       ],
     });
 
@@ -62,19 +74,27 @@ export const Main = () => {
     });
   }, []);
 
-  useDeskproAppEvents(
-    {
-      async onElementEvent(id) {
-        switch (id) {
-          case "menuButton":
-            unlinkContact().then(() => navigate("/findOrCreate"));
 
+
+  useDeskproAppEvents({
+    async onElementEvent(id, _type, payload) {
+      if (payload && typeof payload === 'object' && 'type' in payload) {
+
+        switch (payload.type) {
+          case "logout": {
+            if (isUsingOAuth) {
+              logoutActiveUser()
+            }
             break;
+          }
+          case "unlink": {
+            unlinkContact().then(() => navigate("/findOrCreate"))
+            break
+          }
         }
-      },
+      }
     },
-    [unlinkContact]
-  );
+  }, [unlinkContact]);
 
   useInitialisedDeskproAppClient(() => {
     (async () => {
