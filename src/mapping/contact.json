@@ -1,8 +1,8 @@
 {
   "titleKeyName": "NAME",
   "idKey": "ID",
-  "externalUrl": "__main_url__crm/contact/list/",
-  "externalChildUrl": "__main_url__crm/contact/details/",
+  "externalUrl": "__main_url__/crm/contact/list/",
+  "externalChildUrl": "__main_url__/crm/contact/details/",
   "internalChildUrl": "/view/single/Contact/",
   "title": "Contact",
   "create": [

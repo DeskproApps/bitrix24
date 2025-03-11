@@ -32,7 +32,7 @@
       "type": "string",
       "isRequired": true,
       "isBackendOnly": false,
-      "validationPattern": "^https:\\/\\/.*\\..*$",
+      "validationPattern": "^https:\\/\\/.*\\..*[^\\/]$",
       "order": 20
     },
     "rest_api_url": {
