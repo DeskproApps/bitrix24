@@ -90,7 +90,9 @@
   },
   "proxy": {
     "whitelist": [
-      { "url": "__rest_api_url__.*", "methods": ["GET", "POST"], "timeout": 30 }
+      { "url": "__rest_api_url__.*", "methods": ["GET", "POST"], "timeout": 30 },
+      { "url": "__main_url__/rest/.*", "methods": ["GET", "POST"], "timeout": 30 },
+      { "url": "https://oauth.bitrix.info/oauth/.*", "methods": ["POST"], "timeout": 30 }
     ]
   }
 }
