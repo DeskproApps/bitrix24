@@ -16,7 +16,6 @@ import { LoadingSpinner } from "@deskpro/app-sdk";
 import { Main } from "./pages/Main";
 import { queryClient } from "./query";
 import { QueryClientProvider, QueryErrorResetBoundary } from "@tanstack/react-query";
-import { Redirect } from "./components/Redirect/Redirect";
 import { Suspense } from "react";
 import { Verify } from "./pages/Verify/Verify";
 import { ViewObject } from "./pages/View/Object";
@@ -33,7 +32,6 @@ function App() {
               <ErrorBoundary onReset={reset} FallbackComponent={ErrorFallback}>
                 <Routes>
                   <Route path="/">
-                    <Route path="redirect" element={<Redirect />} />
                     <Route index element={<LoadingPage />} />
                     <Route path="login" element={<LoginPage />} />
                     <Route path="home" element={<Main />} />
