@@ -42,7 +42,7 @@
       "isRequired": false,
       "isBackendOnly": true,
       "validationPattern": "https://.*\\.bitrix24\\..*/rest/.*/$",
-      "condition": "settings.use_deskpro_saas != true && use_rest_api_url == true",
+      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url == true",
       "order": 30
     },
     "verify": {
@@ -51,6 +51,7 @@
       "options": { "entrypoint": "#/verify", "height": 60},
       "isRequired": false,
       "isBackendOnly": false,
+      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url == true",
       "order": 40
     },
     "client_id": {
@@ -58,7 +59,7 @@
       "type": "string",
       "isRequired": false,
       "isBackendOnly": false,
-      "condition": "settings.use_deskpro_saas != true && use_rest_api_url != true",
+      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url != true",
       "order": 50
     },
     "client_secret": {
