@@ -1,12 +1,11 @@
 import { ContextData, ISettings } from "../../types/settings";
 import { createSearchParams, useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../../api/api";
-import { OAuth2Result, useDeskproLatestAppContext, useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
+import { IOAuth2, OAuth2Result, useDeskproLatestAppContext, useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
 import { placeholders } from "../../constants";
 import { useCallback, useState } from "react";
 import { useLinkContact } from "../../hooks/hooks";
 import getAccessToken from "../../api/bitrix24/getAccessToken";
-
 
 interface UseLogin {
     onSignIn: () => void,
@@ -19,6 +18,8 @@ export default function useLogin(): UseLogin {
     const [authUrl, setAuthUrl] = useState<string | null>(null)
     const [error, setError] = useState<null | string>(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [isPolling, setIsPolling] = useState(false)
+    const [oAuth2Context, setOAuth2Context] = useState<IOAuth2 | null>(null)
     const navigate = useNavigate()
 
     const { getLinkedContact } = useLinkContact();
@@ -53,7 +54,7 @@ export default function useLogin(): UseLogin {
             return
         }
 
-        const oauth2 = mode === "local" ?
+        const oAuth2Response = mode === "local" ?
             await client.startOauth2Local(
                 ({ state, callbackUrl }) => {
                     return `https://oauth.bitrix.info/oauth/authorize?${createSearchParams([
@@ -67,7 +68,7 @@ export default function useLogin(): UseLogin {
                 /\bcode=(?<code>[^&#]+)/,
                 async (code: string): Promise<OAuth2Result> => {
                     // Extract the callback URL from the authorization URL
-                    const url = new URL(oauth2.authorizationUrl);
+                    const url = new URL(oAuth2Response.authorizationUrl);
                     const redirectUri = url.searchParams.get("redirect_uri");
 
                     if (!redirectUri) {
@@ -82,40 +83,58 @@ export default function useLogin(): UseLogin {
             // Global Proxy Service
             : await client.startOauth2Global("app.67d049a2edef53.72718877");
 
-        setAuthUrl(oauth2.authorizationUrl)
-        setIsLoading(false)
+        setAuthUrl(oAuth2Response.authorizationUrl)
+        setOAuth2Context(oAuth2Response)
 
-        try {
-            const result = await oauth2.poll()
-
-            await client.setUserState(placeholders.OAUTH2_ACCESS_TOKEN_PATH, result.data.access_token, { backend: true })
-
-            if (result.data.refresh_token) {
-                await client.setUserState(placeholders.OAUTH2_REFRESH_TOKEN_PATH, result.data.refresh_token, { backend: true })
-            }
-
-            try {
-                await getCurrentUser(client)
-            } catch {
-                throw new Error("Error authenticating user")
-            }
-
-            getLinkedContact()
-                .then((linkedContact) => {
-                    if (!linkedContact || linkedContact.length === 0) {
-                        navigate("/findOrCreate")
-                    } else {
-                        navigate("/home")
-                    }
-                })
-        } catch (error) {
-            setError(error instanceof Error ? error.message : 'Unknown error');
-            setIsLoading(false);
-        }
     }, [setAuthUrl, context?.settings.use_deskpro_saas])
+
+
+    useInitialisedDeskproAppClient((client) => {
+        if (!user || !oAuth2Context) {
+            return
+        }
+
+        const startPolling = async () => {
+            try {
+                const result = await oAuth2Context.poll()
+
+                await client.setUserState(placeholders.OAUTH2_ACCESS_TOKEN_PATH, result.data.access_token, { backend: true })
+
+                if (result.data.refresh_token) {
+                    await client.setUserState(placeholders.OAUTH2_REFRESH_TOKEN_PATH, result.data.refresh_token, { backend: true })
+                }
+
+                try {
+                    await getCurrentUser(client)
+                } catch {
+                    throw new Error("Error authenticating user")
+                }
+
+                getLinkedContact()
+                    .then((linkedContact) => {
+                        if (!linkedContact || linkedContact.length === 0) {
+                            navigate("/findOrCreate")
+                        } else {
+                            navigate("/home")
+                        }
+                    })
+            } catch (error) {
+                setError(error instanceof Error ? error.message : 'Unknown error');
+            } finally {
+                setIsLoading(false)
+                setIsPolling(false)
+            }
+        }
+
+        if (isPolling) {
+            void startPolling()
+        }
+    }, [isPolling, user, oAuth2Context, navigate])
+
 
     const onSignIn = useCallback(() => {
         setIsLoading(true);
+        setIsPolling(true);
         window.open(authUrl ?? "", '_blank');
     }, [setIsLoading, authUrl]);
 
