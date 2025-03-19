@@ -11,10 +11,11 @@
   "appStoreUrl": "https://www.deskpro.com/product-embed/apps/bitrix24",
   "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
   "settings": {
-    "use_deskpro_saas": {
-      "title": "One-Click Installation",
+    "use_advanced_connect": {
+      "title": "Advanced Connect",
+      "description": "Follow the setup guide and use your credentials to connect the app to Deskpro.",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "isRequired": false,
       "isBackendOnly": false,
       "order": 5
@@ -25,7 +26,7 @@
       "isRequired": false,
       "isBackendOnly": false,
       "default": false,
-      "condition": "settings.use_deskpro_saas != true",
+      "condition": "settings.use_advanced_connect != false",
       "order": 10
     },
     "main_url": {
@@ -42,7 +43,7 @@
       "isRequired": false,
       "isBackendOnly": true,
       "validationPattern": "https://.*\\.bitrix24\\..*/rest/.*/$",
-      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url == true",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url == true",
       "order": 30
     },
     "verify": {
@@ -51,7 +52,7 @@
       "options": { "entrypoint": "#/verify", "height": 60},
       "isRequired": false,
       "isBackendOnly": false,
-      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url == true",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url == true",
       "order": 40
     },
     "client_id": {
@@ -59,7 +60,7 @@
       "type": "string",
       "isRequired": false,
       "isBackendOnly": false,
-      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url != true",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url != true",
       "order": 50
     },
     "client_secret": {
@@ -67,7 +68,7 @@
       "type": "string",
       "isRequired": false,
       "isBackendOnly": true,
-      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url != true",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url != true",
       "order": 60
     },
     "callback_url": {
@@ -79,7 +80,7 @@
       },
       "isRequired": false,
       "isBackendOnly": true,
-      "condition": "settings.use_deskpro_saas != true && settings.use_rest_api_url != true",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url != true",
       "order": 70
     }
   },
