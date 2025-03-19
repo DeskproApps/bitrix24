@@ -27,7 +27,7 @@ export default function useLogin(): UseLogin {
     const { context } = useDeskproLatestAppContext<ContextData, ISettings>()
 
     const user = context?.data?.user
-
+    const isUsingOAuth = context?.settings?.use_rest_api_url !== true || context.settings.use_advanced_connect === false
 
     // TODO: Update useInitialisedDeskproAppClient typing in the
     // App SDK to to properly handle both async and sync functions
@@ -40,7 +40,7 @@ export default function useLogin(): UseLogin {
         }
 
         // Ensure they aren't using access tokens
-        if (context.settings.use_rest_api_url === true) {
+        if (!isUsingOAuth) {
             setError("Enable OAuth to access this page");
             return
         }
