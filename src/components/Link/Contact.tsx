@@ -1,49 +1,26 @@
-import {
-  useDeskproAppEvents,
-  useInitialisedDeskproAppClient,
-  useQueryWithClient,
-} from "@deskpro/app-sdk";
 import { AnyIcon, Button, Checkbox, Input, Stack } from "@deskpro/deskpro-ui";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import useDebounce from "../../hooks/debounce";
-import { useLinkContact } from "../../hooks/hooks";
-import ContactJson from "../../mapping/contact.json";
-import { Title } from "../../styles";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FieldMapping } from "../FieldMapping/FieldMapping";
+import { getContactsByEmail } from "../../api/api";
 import { HorizontalDivider } from "../HorizontalDivider/HorizontalDivider";
 import { LoadingSpinnerCenter } from "../LoadingSpinnerCenter/LoadingSpinnerCenter";
-import { getContactsByEmail } from "../../api/api";
+import { Title } from "../../styles";
+import { useInitialisedDeskproAppClient, useQueryWithClient } from "@deskpro/app-sdk";
+import { useLinkContact } from "../../hooks/hooks";
+import ContactJson from "../../mapping/contact.json";
+import useDebounce from "../../hooks/debounce";
 
 export const LinkContact = () => {
   const [selectedContact, setSelectedContact] = useState<string | null>(null);
   const [prompt, setPrompt] = useState<string>("");
   const { linkContact } = useLinkContact();
-  const navigate = useNavigate();
 
   const { debouncedValue: debouncedText } = useDebounce(prompt, 300);
 
   useInitialisedDeskproAppClient((client) => {
     client.setTitle("Link Contact");
-
-    client.registerElement("homeButton", {
-      type: "home_button",
-    });
-
-    client.deregisterElement("plusButton");
-
-    client.deregisterElement("menuButton");
   }, []);
-
-  useDeskproAppEvents({
-    async onElementEvent(id) {
-      switch (id) {
-        case "homeButton":
-          navigate("/redirect");
-      }
-    },
-  });
 
   const contactsQuery = useQueryWithClient(
     ["getContactsByEmail", debouncedText],

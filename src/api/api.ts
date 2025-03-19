@@ -1,12 +1,10 @@
-import {
-  IDeskproClient,
-  proxyFetch,
-} from "@deskpro/app-sdk";
 import { IActivity } from "../types/activity";
 import { IContact, IContactList } from "../types/contact";
 import { IDeal, IDealCreate } from "../types/deal";
 import { IProduct, IProductRow } from "../types/product";
+import { placeholders } from "../constants";
 import { RequestMethod } from "./types";
+import {IDeskproClient,proxyFetch} from "@deskpro/app-sdk";
 
 export const getCurrentUser = async (
   client: IDeskproClient
@@ -180,7 +178,15 @@ const installedRequest = async (
     options.body = JSON.stringify(data);
   }
 
-  const response = await fetch(`__rest_api_url__${endpoint}`, options);
+  const isUsingOAuth2 = (await client.getUserState<boolean>("isUsingOAuth"))[0]?.data
+
+  const oauthAccessToken = `[user[${placeholders.OAUTH2_ACCESS_TOKEN_PATH}]]`;
+  const baseURL = isUsingOAuth2 ? `__main_url__/rest/${endpoint}` : `__rest_api_url__${endpoint}`;
+  const fetchURL = isUsingOAuth2
+    ? `${baseURL}${endpoint.includes('?') ? '&' : '?'}auth=${oauthAccessToken}`
+    : baseURL;
+
+  const response = await fetch(fetchURL, options);
 
   if (isResponseError(response)) {
     throw new Error(

@@ -1,3 +1,5 @@
+import { DeskproTheme } from "@deskpro/deskpro-ui";
+
 export type DropdownData = {
   [key: string]: {
     key: string;
@@ -13,3 +15,7 @@ export type FieldMappingInputs = {
   multiple?: boolean;
   settings_str?: string;
 }[];
+
+export interface ThemeProps {
+  theme: DeskproTheme;
+}

@@ -1,8 +1,8 @@
 {
   "titleKeyName": "TITLE",
   "idKey": "ID",
-  "externalUrl": "__main_url__crm/deal/list/",
-  "externalChildUrl": "__main_url__crm/deal/details/",
+  "externalUrl": "__main_url__/crm/deal/list/",
+  "externalChildUrl": "__main_url__/crm/deal/details/",
   "internalChildUrl": "/view/single/Deal/",
   "internalUrl": "/view/list/Deal/",
   "title": "Deal",

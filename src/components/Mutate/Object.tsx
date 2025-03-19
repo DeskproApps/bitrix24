@@ -305,7 +305,7 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     const id = submitMutation.data?.result;
 
     linkContact(id.toString()).then(() => {
-      navigate(`/redirect`);
+      navigate(`/home`);
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -336,7 +336,7 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
     async onElementEvent(id) {
       switch (id) {
         case "homeButton":
-          navigate("/redirect");
+          navigate("/home");
 
           break;
       }
