@@ -13,7 +13,7 @@ export const FindOrCreate = ({ pageParam }: { pageParam?: 0 | 1 }) => {
 
   const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
   const { logoutActiveUser } = useLogout()
-  const isUsingOAuth = context?.settings?.use_rest_api_url !== true || context.settings.use_advanced_connect === false
+  const isUsingOAuth = context?.settings?.use_rest_api_url == false || context?.settings.use_advanced_connect === false
 
   const navigate = useNavigate();
 

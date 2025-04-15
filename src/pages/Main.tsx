@@ -32,7 +32,7 @@ export const Main = () => {
   const [contactId, setContactId] = useState<string | null | undefined>(undefined);
 
   const { logoutActiveUser } = useLogout()
-  const isUsingOAuth = context?.settings?.use_rest_api_url !== true || context.settings.use_advanced_connect === false
+  const isUsingOAuth = context?.settings?.use_rest_api_url === false || context.settings.use_advanced_connect === false
 
 
   const { getLinkedContact, unlinkContact, linkContact } = useLinkContact();

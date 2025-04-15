@@ -27,7 +27,7 @@ export default function useLogin(): UseLogin {
     const { context } = useDeskproLatestAppContext<ContextData, ISettings>()
 
     const user = context?.data?.user
-    const isUsingOAuth = context?.settings?.use_rest_api_url !== true || context.settings.use_advanced_connect === false
+    const isUsingOAuth = context?.settings?.use_rest_api_url === false || context?.settings.use_advanced_connect === false
 
     // TODO: Update useInitialisedDeskproAppClient typing in the
     // App SDK to to properly handle both async and sync functions
@@ -86,7 +86,7 @@ export default function useLogin(): UseLogin {
         setAuthUrl(oAuth2Response.authorizationUrl)
         setOAuth2Context(oAuth2Response)
 
-    }, [setAuthUrl, context?.settings.use_advanced_connect])
+    }, [setAuthUrl, context?.settings.use_advanced_connect, context?.settings.use_rest_api_url])
 
 
     useInitialisedDeskproAppClient((client) => {
