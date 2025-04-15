@@ -23,27 +23,27 @@ import dealJson from "../mapping/deal.json";
 
 import { IContact } from "../types/contact";
 import { IDeal } from "../types/deal";
+import { ContextData, ISettings } from "../types/settings";
+import { useLogout } from "../hooks/useLogout";
 
 export const Main = () => {
   const navigate = useNavigate();
-  const { context } = useDeskproLatestAppContext();
-  const [contactId, setContactId] = useState<string | null | undefined>(
-    undefined
-  );
+  const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
+  const [contactId, setContactId] = useState<string | null | undefined>(undefined);
+
+  const { logoutActiveUser } = useLogout()
+  const isUsingOAuth = context?.settings?.use_rest_api_url === false || context.settings.use_advanced_connect === false
+
 
   const { getLinkedContact, unlinkContact, linkContact } = useLinkContact();
 
   useInitialisedDeskproAppClient((client) => {
+
     client.setTitle("Bitrix24");
 
-    client.registerElement("homeButton", {
-      type: "home_button",
-    });
-
     client.deregisterElement("menuButton");
-
+    client.deregisterElement("homeButton");
     client.deregisterElement("link");
-
     client.deregisterElement("plusButton");
 
     client.registerElement("menuButton", {
@@ -52,10 +52,18 @@ export const Main = () => {
         {
           title: "Unlink Contact",
           payload: {
-            type: "changePage",
+            type: "unlink",
             page: "/",
           },
         },
+        ...(isUsingOAuth
+          ? [
+            {
+              title: "Logout",
+              payload: { type: "logout" },
+            },
+          ]
+          : [])
       ],
     });
 
@@ -66,22 +74,27 @@ export const Main = () => {
     });
   }, []);
 
-  useDeskproAppEvents(
-    {
-      async onElementEvent(id) {
-        switch (id) {
-          case "menuButton":
-            unlinkContact().then(() => navigate("/findOrCreate"));
 
+
+  useDeskproAppEvents({
+    async onElementEvent(id, _type, payload) {
+      if (payload && typeof payload === 'object' && 'type' in payload) {
+
+        switch (payload.type) {
+          case "logout": {
+            if (isUsingOAuth) {
+              logoutActiveUser()
+            }
             break;
-          case "homeButton":
-            navigate("/redirect");
-            break;
+          }
+          case "unlink": {
+            unlinkContact().then(() => navigate("/findOrCreate"))
+            break
+          }
         }
-      },
+      }
     },
-    [unlinkContact]
-  );
+  }, [unlinkContact]);
 
   useInitialisedDeskproAppClient(() => {
     (async () => {
@@ -97,7 +110,6 @@ export const Main = () => {
 
       setContactId(linkedContact[0]);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context]);
 
   const contactQuery = useQueryWithClient(

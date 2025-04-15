@@ -7,15 +7,26 @@
   "isSingleInstall": false,
   "hasDevMode": true,
   "serveUrl": "https://apps-cdn.deskpro-service.com/__name__/__version__",
+  "secrets": "udWqTrB83bAjMMe5P1trvO4+san3oN10/Dv/3F2dk9Ubi5Nn+DX0q817CmzcuiV2nWmDk2xli/41a0P1QRC0h7Ac85X7tksE7a06N4t7yepwyyoqvZlBpUcSWzIim6iAU2Mkx2PW/x8ZopLptly7ZyHhzgdmqV/kR0Cqq8KCo9Yn76UrbUB+iMtryrg7jBA/A0HwZkjluuJUZX++ZmqFLdx6Eu8TKb+L3ISLqs28UMBkwIJKFQ0izeCyGRN0mXnxMaRxDxmMhjTCwBOSgsot5P/X+002hRh9wqhw5AUdWkOijvZjv198dETiq8wSZAPxg7hZYoiuKlWMyMbJMBVKfgnMzxBQF5KB7aOjmzfF1ER6N5KsZZQgfjl9zB/+Kh/YsqhUZ7nQTJuhgSlqFRYoQKCGObtsZrGuqL3V27mAENYwPxKkn0VvuCflSG0EKcoGXhQw9kPD1C9BnB/wEiIR0SQYUbMACfnBidDBL2GN9Bt5cWS8VsyFUOxRjEe8SJgPDxB7qq4eJM1DrA8q6LSV0SBJGxBJBqllEPrBNOp9nLicERY2vV2NKbBCEgxE9l2yR+Xzn2uMn0/JMlOPm7HT/Eq9MWeh2BAohZ/CDwQT1lapqOrb+IJs9Pb6aklS6IHOQ+N4TUIuP9SFF9BtyOTof/Y4fN7IduI4R3oWLso1yuZxDpO3jv7Wt3JvfvhXYkjIRekcTkfH1I8R+jTgMqsb9q2dgJQ6S7WDeY+yTDheiojETiqlSTLu++kKcG2OarR4htmkUPFeNPPzLqq/gjJEijt8UV5SvKsuAogOmaTRHJHEjSBXZfPLyNBdyJfHCZMvu0DWPynzPChSzkQtnwjzG9MZSTmZFUjgDh7RMD+gUSkts0ZTdcj9eDsLbI48nnfGttOgmIseHwsqhBOAqf4wNdtQKWvXWLCAJEj+PWCqkuDeLS64zFKnjq+MR1aXIT26LgAo4sFjfe7k+3x8cBn1zijADg7PGpC6po+N2p4ADM49AD0D+dt45vQagt50OGWXU94IReYMjBVEHadKsqeiZPlObjbcy7TkovT1VdwWK6SS8W5sz4xVlokgm5RBk1q7wKMaMCC80T6rJZCup/Iik5ao5jnhLkZIy+NxMzmNoHwYPKn7DNTh4t3I8N0Jupwz",
   "appStoreUrl": "https://www.deskpro.com/product-embed/apps/bitrix24",
   "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
   "settings": {
-    "rest_api_url": {
-      "title": "Rest API URL",
-      "type": "string",
-      "isRequired": true,
-      "isBackendOnly": true,
-      "validationPattern": "https://.*\\.bitrix24\\..*/rest/.*/$",
+    "use_advanced_connect": {
+      "title": "Advanced Connect",
+      "description": "Follow the setup guide and use your credentials to connect the app to Deskpro.",
+      "type": "boolean",
+      "default": false,
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 5
+    },
+    "use_rest_api_url": {
+      "title": "Use REST API URL",
+      "type": "boolean",
+      "isRequired": false,
+      "isBackendOnly": false,
+      "default": false,
+      "condition": "settings.use_advanced_connect != false",
       "order": 10
     },
     "main_url": {
@@ -23,16 +34,54 @@
       "type": "string",
       "isRequired": true,
       "isBackendOnly": false,
-      "validationPattern": "^https:\\/\\/.*\\..*$",
+      "validationPattern": "^https:\\/\\/.*\\..*[^\\/]$",
       "order": 20
+    },
+    "rest_api_url": {
+      "title": "Rest API URL",
+      "type": "string",
+      "isRequired": false,
+      "isBackendOnly": true,
+      "validationPattern": "https://.*\\.bitrix24\\..*/rest/.*/$",
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url != false",
+      "order": 30
     },
     "verify": {
       "title": "",
       "type": "app_embedded",
-      "options": { "entrypoint": "#/verify" },
+      "options": { "entrypoint": "#/verify", "height": 60},
       "isRequired": false,
       "isBackendOnly": false,
-      "order": 30
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url != false",
+      "order": 40
+    },
+    "client_id": {
+      "title": "Client ID",
+      "type": "string",
+      "isRequired": false,
+      "isBackendOnly": false,
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url == false",
+      "order": 50
+    },
+    "client_secret": {
+      "title": "Client Secret",
+      "type": "string",
+      "isRequired": false,
+      "isBackendOnly": true,
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url == false",
+      "order": 60
+    },
+    "callback_url": {
+      "title": "Callback URL",
+      "type": "app_embedded",
+      "options": {
+        "entrypoint": "#/admin/callback",
+        "height": 80
+      },
+      "isRequired": false,
+      "isBackendOnly": true,
+      "condition": "settings.use_advanced_connect != false && settings.use_rest_api_url == false",
+      "order": 70
     }
   },
   "entityAssociations": {
@@ -44,7 +93,9 @@
   },
   "proxy": {
     "whitelist": [
-      { "url": "__rest_api_url__.*", "methods": ["GET", "POST"], "timeout": 30 }
+      { "url": "__rest_api_url__.*", "methods": ["GET", "POST"], "timeout": 30 },
+      { "url": "__main_url__/rest/.*", "methods": ["GET", "POST"], "timeout": 30 },
+      { "url": "https://oauth.bitrix.info/oauth/.*", "methods": ["POST"], "timeout": 30 }
     ]
   }
 }

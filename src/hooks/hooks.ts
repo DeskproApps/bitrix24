@@ -1,13 +1,11 @@
-import {
-  useDeskproAppClient,
-  useDeskproLatestAppContext,
-} from "@deskpro/app-sdk";
+import { query } from "../utils/query";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { query } from "../utils/query";
+import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
+import { ContextData, ISettings } from "../types/settings";
 
 export const useLinkContact = () => {
-  const { context } = useDeskproLatestAppContext<{user: {id: number}}, never>();
+  const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
   const { client } = useDeskproAppClient();
   const [isLinking, setIsLinking] = useState(false);
   const navigate = useNavigate();
@@ -38,7 +36,7 @@ export const useLinkContact = () => {
 
       query.clear();
 
-      navigate("/");
+      navigate("/home");
 
       setIsLinking(false);
     },
