@@ -46,6 +46,7 @@ import { HorizontalDivider } from "../HorizontalDivider/HorizontalDivider";
 import { IDeal, IDealCreate } from "../../types/deal";
 import { useQueryMutationWithClient } from "../../hooks/useQueryMutationClient";
 import { ICreateActivity } from "../../types/activity";
+import { ContextData, ISettings } from "../../types/settings";
 
 const contactInputs = ContactJson;
 
@@ -60,7 +61,7 @@ export const MutateObject = ({ objectId, objectName }: Props) => {
   const navigate = useNavigate();
   const [schema, setSchema] = useState<ZodTypeAny | null>(null);
   const { linkContact } = useLinkContact();
-  const { context } = useDeskproLatestAppContext<{ user: { name: string, primaryEmail: string } }, never>();
+  const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
 
   const { getLinkedContact } = useLinkContact();
 

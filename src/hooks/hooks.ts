@@ -2,9 +2,10 @@ import { query } from "../utils/query";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDeskproAppClient, useDeskproLatestAppContext } from "@deskpro/app-sdk";
+import { ContextData, ISettings } from "../types/settings";
 
 export const useLinkContact = () => {
-  const { context } = useDeskproLatestAppContext<{ user: { id: number } }, never>();
+  const { context } = useDeskproLatestAppContext<ContextData, ISettings>();
   const { client } = useDeskproAppClient();
   const [isLinking, setIsLinking] = useState(false);
   const navigate = useNavigate();
