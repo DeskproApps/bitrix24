@@ -1,0 +1,190 @@
+<svg fill="none" viewBox="0 0 600 274" width="600" height="274" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject x="0" y="0" width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .container {
+          width: 100%;
+          margin: 0;
+          padding: 28px;
+          box-sizing: border-box;
+          display: flex;
+          gap: 50px;
+          flex-direction: column;
+          color: white;
+          font-family: 'Arial', sans-serif;
+          text-align: center;
+        }
+
+        .logosWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 48px
+        }
+
+        .logoBox {
+          width: 193.37px;
+          height: 193.37px;
+        }
+
+        .logoBoxContent {
+          width: 193.37px;
+          height: 193.37px;
+          background-color: white;
+          border: 5px solid #032B4E;
+          border-radius: 35px;
+          z-index: 2;
+          object-fit: contain;
+          padding: 20px;
+          box-shadow: 10px 10px 0 0 #032B4E;
+          box-sizing: border-box;
+        }
+      </style>
+
+      <div class="container">
+        <!-- Logos -->
+        <div class="logosWrapper">
+          <!-- Deskpro Logo -->
+          <div class="logoBox">
+            <div class="logoBoxContent">
+              <!-- Deskpro Logo Begins -->
+              <svg class="deskproLogo" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                viewBox="0 0 300 300">
+                <path d="M0 0 C1.09790863 -0.00096176 2.19581726 -0.00192352 3.32699585 -0.00291443 C4.57574493
+                            -0.01544754 5.82449402 -0.02798065 7.11108398 -0.04089355 C8.4726159
+                            -0.02861711 9.83413791 -0.01519587 11.19564819 -0.00071716 C12.60087264
+                            -0.00154661 14.00609697 -0.00400883 15.41131592 -0.00802612 C18.35876634
+                            -0.01088438 21.30545711 0.00380638 24.2527771 0.03126526 C28.00523149
+                            0.0651614 31.75631119 0.05939401 35.50882912 0.04060268 C38.41397242
+                            0.02995295 41.31880441 0.03904504 44.22391891 0.0539875 C45.60560553
+                            0.05912441 46.98732531 0.05874286 48.36900711 0.05244255 C57.67991798
+                            0.02594684 66.06514024 0.59746144 73.59408569 6.55787659 C79.39300823
+                            13.77753514 80.65082636 20.62567053 82.15658569 29.62818909 C86.13412698
+                            30.36153338 86.13412698 30.36153338 90.15658569 30.62818909 C90.6120707
+                            20.80995667 89.90016562 12.8752987 84.58505249 4.4690094 C84.1313176
+                            3.74949097 83.6775827 3.02997253 83.21009827 2.28865051 C82.86243912
+                            1.74069824 82.51477997 1.19274597 82.15658569 0.62818909 C90.38971054
+                            0.55816206 98.62270749 0.50511392 106.85605812 0.47275257 C110.68062612
+                            0.45720766 114.50498789 0.43617858 118.32943726 0.40187073 C122.0318029
+                            0.36887225 125.7339723 0.35125249 129.43647385 0.34355736 C130.83722389
+                            0.33808541 132.23796525 0.32740433 133.63862991 0.31099892 C153.49700166
+                            0.08801283 173.02082189 5.0201729 187.90658569 18.87818909 C205.36841764
+                            37.63503728 206.60962481 60.25575849 206.44955444 84.39772034
+                            C206.44395076 86.89020532 206.43968432 89.38269363 206.43669128
+                            91.87518311 C206.42530338 98.39680804 206.39588877 104.91822867
+                            206.36257935 111.43977356 C206.33009703 118.10996021 206.31815799
+                            124.78021096 206.30307007 131.45045471 C206.2710129 144.50978605
+                            206.22047715 157.56897664 206.15658569 170.62818909 C204.91224762
+                            170.58287552 203.66790955 170.53756195 202.38586426 170.49087524
+                            C197.72239423 170.34062924 193.06180002 170.28761942 188.39611816
+                            170.26235962 C186.38607388 170.23824989 184.37615408 170.18855464
+                            182.36743164 170.11178589 C171.2974984 169.38728383 171.2974984
+                            169.38728383 161.16244125 172.98348808 C153.45684498 180.33974005
+                            149.56158444 190.7627459 146.15658569 200.62818909 C145.82658569
+                            201.28818909 145.49658569 201.94818909 145.15658569 202.62818909
+                            C134.79157617 203.27939387 126.02095408 202.12089318 117.78158569
+                            195.37818909 C110.9557885 188.76134487 108.42311706 182.05263143
+                            106.05111694 172.89772034 C105.26112219 170.01027227 104.42702239
+                            167.33713581 103.15658569 164.62818909 C101.33235058 163.38044523
+                            101.33235058 163.38044523 99.15658569 163.62818909 C96.84241244
+                            165.17049797 96.84241244 165.17049797 95.15658569 167.62818909
+                            C95.230194 178.78720896 101.3975859 190.49764814 107.7762146
+                            199.33155823 C108.22300568 199.95188431 108.66979675 200.57221039
+                            109.13012695 201.21133423 C109.46885834 201.67889633 109.80758972
+                            202.14645844 110.15658569 202.62818909 C102.54087775 202.69816423
+                            94.92520377 202.75123881 87.30924606 202.7836256 C83.77158886
+                            202.79918152 80.23415403 202.82023146 76.69662476 202.85450745
+                            C72.61555023 202.89379571 68.53470374 202.90798134 64.45346069
+                            202.92115784 C62.57772369 202.94438362 62.57772369 202.94438362
+                            60.66409302 202.96807861 C49.70024811 202.9701483 39.83026685
+                            201.0601299 30.09408569 195.94068909 C29.41853638 195.59111145
+                            28.74298706 195.24153381 28.04696655 194.88136292 C12.65629493
+                            186.72238655 0.71245476 175.17166186 -4.61134434 158.17676449
+                            C-6.83426657 150.09939755 -7.27668935 142.56732622 -7.24746704
+                            134.21827698 C-7.25318445 132.81576499 -7.26015395 131.41325764
+                            -7.26826477 130.01075745 C-7.28604629 126.24052298 -7.28505819
+                            122.47052307 -7.27932239 118.70025945 C-7.27621301 115.54374497
+                            -7.28234128 112.38727443 -7.28836113 109.23076624 C-7.30235114
+                            101.78760039 -7.30088731 94.34454951 -7.28945923 86.90138245
+                            C-7.27794312 79.23146149 -7.29212447 71.56188878 -7.3188557 63.89201361
+                            C-7.34100469 57.28875081 -7.3476531 50.68559744 -7.34177929 44.08230013
+                            C-7.33841144 40.14580602 -7.34081509 36.2095359 -7.35803032 32.2730732
+                            C-7.37348816 28.57840681 -7.36955758 24.88425916 -7.35072517 21.18961334
+                            C-7.34528135 19.19038589 -7.3595562 17.19113517 -7.37442017 15.19195557
+                            C-7.36458603 13.99920013 -7.35475189 12.8064447 -7.34461975 11.57754517
+                            C-7.34441047 10.54320878 -7.34420118 9.50887239 -7.34398556 8.44319248
+                            C-6.54103951 3.9277597 -4.54576698 1.00428601 0 0 Z M131.15658569
+                            99.62818909 C130.46252849 102.2209651 130.46252849 102.2209651
+                            130.15658569 104.62818909 C134.79807229 106.77164151 139.44287214
+                            108.90767563 144.09091187 111.03688049 C145.67192558 111.76238417
+                            147.25201162 112.489913 148.83114624 113.21949768 C151.09998085
+                            114.26731008 153.37204244 115.30781506 155.64486694 116.34693909
+                            C156.3512178 116.67504578 157.05756866 117.00315247 157.7853241
+                            117.34120178 C160.7500946 118.68928709 162.86022504 119.62818909
+                            166.15658569 119.62818909 C166.85904225 108.86851925 166.85904225
+                            108.86851925 162.15658569 99.62818909 C157.58836258 94.87192774
+                            153.38305405 92.170044 146.71908569 91.31568909 C140.38341529
+                            92.08833182 135.55777776 95.22699702 131.15658569 99.62818909 Z " fill="#4694DA"
+                  transform="translate(15.843414306640625,-0.6281890869140625)" />
+                <path d="M0 0 C15.51 0 31.02 0 47 0 C47 24.40683993 45.75083352 46.53093639 27.75 64.8125 C13.00045919
+                            79.23032933 -4.87874011 86.48298141 -25.4296875 86.26367188
+                            C-26.86979764 86.23862221 -28.30990181 86.2132276 -29.75 86.1875
+                            C-31.23696545 86.17240967 -32.7239459 86.15872904 -34.2109375
+                            86.14648438 C-37.80761014 86.11386039 -41.40370473 86.0623247 -45 86
+                            C-42.7757578 81.3313181 -39.60391706 77.75114414 -36.2578125 73.828125
+                            C-33.99994303 71.18191925 -33.99994303 71.18191925 -32.7421875 68.609375
+                            C-31.36812595 66.01499306 -30.42647422 64.70234317 -28 63 C-24.15121262
+                            61.9475896 -20.20538966 61.54137662 -16.25146484 61.0690918 C-6.38951589
+                            59.83991859 1.24900488 56.16987512 7.50390625 48.25 C12.68172024
+                            40.46300036 16.10032194 31.45534248 16 22 C13.52771895 16.34775894
+                            8.55778215 11.81547659 4.47460938 7.26367188 C3.90162109 6.61591797
+                            3.32863281 5.96816406 2.73828125 5.30078125 C1.94997925 4.42160034
+                            1.94997925 4.42160034 1.14575195 3.5246582 C0 2 0 2 0 0 Z " fill="#4694DA"
+                  transform="translate(175,214)" />
+                <path d="M0 0 C1.8703022 -0.36914349 1.8703022 -0.36914349 4.18875122 -0.36076355 C5.50548325 -0.36694954
+                            5.50548325 -0.36694954 6.84881592 -0.3732605 C8.2967453 -0.35708176
+                            8.2967453 -0.35708176 9.77392578 -0.34057617 C11.29592087 -0.34123329
+                            11.29592087 -0.34123329 12.84866333 -0.34190369 C16.2144064 -0.33980772
+                            19.57965607 -0.31643831 22.9453125 -0.29296875 C25.27415698 -0.28737568
+                            27.60300498 -0.28310422 29.93185425 -0.28010559 C36.07059421 -0.26863413
+                            42.20912227 -0.23914705 48.34777832 -0.20599365 C54.60812513 -0.17534237
+                            60.86850608 -0.16161083 67.12890625 -0.14648438 C79.41936409 -0.11427964
+                            91.70966445 -0.06305547 104 0 C99.58406611 9.21699902 90.28820732
+                            13.68864132 81 17 C71.63219976 19.76585415 61.9645546 19.2544613
+                            52.3046875 19.1953125 C50.50294147 19.19157617 48.70119338 19.18873213
+                            46.89944458 19.18673706 C42.1878485 19.17914942 37.47637833 19.15954347
+                            32.76483154 19.1373291 C27.94480085 19.11676505 23.12474954 19.10771289
+                            18.3046875 19.09765625 C8.86973675 19.07629239 -0.5651211 19.04221615
+                            -10 19 C-8.71078784 16.39459218 -7.41874404 13.79065627 -6.125 11.1875
+                            C-5.76019531 10.44951172 -5.39539063 9.71152344 -5.01953125 8.95117188
+                            C-4.66503906 8.23896484 -4.31054688 7.52675781 -3.9453125 6.79296875
+                            C-3.62062988 6.1383667 -3.29594727 5.48376465 -2.96142578 4.80932617 C-2
+                            3 -2 3 0 0 Z " fill="#4694DA" transform="translate(187,183)" />
+              </svg>
+              <!-- Deskpro Logo Ends -->
+            </div>
+            <div class="logoBoxShadow"></div>
+          </div>
+
+          <span
+            style="font-size: 60px; font-weight: 900; text-shadow: -1px -1px 0px #032B4E, -1px -1px 0px #032B4E, 1px 1px 0px #032B4E, 1px -1px 0px #032B4E, -1px 1px 0px #032B4E, 3px 3px 0px #032B4E">+</span>
+
+          <!-- Third Party Logo -->
+          <div class="logoBox">
+            <div class="logoBoxContent">
+              <!-- Third Party Logo Starts Here -->
+                <svg fill='#D63360' width='50px' height='50px' role='img' xmlns='http://www.w3.org/2000/svg'>
+                    <image href='data:image/jpeg;charset=utf-8;base64,AAABAAEAMjIAAAEAIADIKAAAFgAAACgAAAAyAAAAZAAAAAEAIAAAAAAAECcAACMuAAAjLgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2uTUd9L4xXvO+M5LzvjK588Ax2fPAMe3zwDH588Ax+fPBMO3zwTDZ9MIxuPTBL5H0wzFe9r8uHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO+9MR/zuzN88rwy1vK8Mv/zvTL/870y//O+Mv/zvjH/874x//O/Mf/zvzH/88Ax//PAMP/zwTD/88Ew//TCMP/0wjD/9MMv1fXDMHv3xDMeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPS7My3yujKi8roz/PK6M//yuzP/8rsz//K8Mv/zvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax//PAMf/zwTD/88Ew//TCMP/0wjD/9MMw//TDL/30xS+z9cMtMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPG4ORLzuTWR8rg0/fK5NP/yuTP/8roz//K6M//yuzP/8rsz//K8Mv/yvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax//PAMf/zwTD/88Ew//TBMP/0wjD/9MIw//TDL//0wy/+9MUvovPFLhYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwtjVX8bc17vK3NP/yuDT/8rg0//K5NP/yuTT/8roz//K6M//yuzP/8rsz//K8M//yvDL/87wy//O9Mv/zvTL/874y//O+Mf/zvzH/878x//PAMf/zwDH/88Ew//PBMP/0wjD/9MIw//TDMP/0wy//9MQv7fPDMFUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/qisG8bU0l/G2Nf/xtjX/8bc1//G3NP/yuDT/8rg0//K4NP/yuTT/8rkz//K6M//yujP/8rsz//K7M//yvDL/8rwy//O9Mv/zvTL/874y//O+Mf/zvzH/878x//PAMf/zwDH/88Ew//PBMP/0wjD/9MIw//TDMP/0wy//9MMv//XEL5T/zDMFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6LkuC/G0NrfxtDX/8bU1//G1Nf/xtjX/8bY1//G3NP/ytzT/8rg0//K4NP/yuTT/8rkz//K6M//yujP/8rsz//K7M//yvDL/8rwy//O9Mv/zvTL/874y//O+Mf/zvzH/878x//O/Mf/zwDH/88Aw//PBMP/zwTD/9MIw//TCMP/0wy//9MMv//TFL7zrxCcNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOqqQAzxszbH8bM2//G0Nv/xtDb/8bU1//G1Nf/xtjX/8bY1//G3Nf/xtzT/8rg0//K4NP/yuTT/8rk0//K6M//yujP/8roz//K7M//yuzP/8rwy//O8Mv/zvTL/870y//O+Mv/zvjH/878x//O/Mf/zwDH/88Ax//PBMP/zwTD/9MIw//TCMP/0wzD/9MMv//PELsbqvysMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/mTMF8LI2t/GyNv/xszb/8bM2//G0Nv/xtDb/8bU1//G1Nf/xtjX/8bY1//G2Nf/xtzT/8rc0//K4NP/yuDT/8rk0//K5M//yujP/8roz//K7M//yuzP/8rwy//K8Mv/zvTL/870y//O+Mv/zvjH/878x//O/Mf/zwDH/88Ax//PBMP/zwTD/9MEw//TCMP/0wjD/9MMv//TDL7z/1SsGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCxOJfwsTf/8LE3//CyNv/xsjb/8bM2//GzNv/xtDb/8bQ1//G1Nf/xtTX/8bY1//G2Nf/xtzT/8rc0//K4NP/yuDT/8rk0//K5M//yujP/8roz//K7M//yuzP/8rwy//K8Mv/zvTL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax//PAMf/zwTD/88Ew//TCMP/0wjD/9MMw//XDL5QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwrjlV8LA3//CwN//wsTf/8LE3//CyN//xsjb/8bM2//GzNv/xtDb/8bQ2//G1Nf/xtTX/8bY1//G2Nf/xtzX/8bc0//K4NP/yuDT/8rg0//K5NP/yuTP/8roz//K6M//yuzP/8rsz//K8Mv/zvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax//PAMf/zwTD/88Ew//TCMP/0wjD/9MMw//TEMFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8646FvCvOO7wrzj/8LA3//CwN//wsTf/8LE3//CyN//xsjb/8bM2//GzNv/xtDb/8bQ2//G0Nf/xtTX/8bU1//G2Nf/xtjX/8bc0//K3NP/yuDT/8rg0//K5NP/yuTP/8roz//K6M//yuzP/8rsz//K8Mv/yvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax//PAMf/zwDD/88Ew//PBMP/0wjD/9MIw7vPCMRUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxrjeh8K44//CvOP/wrzj/8K84//CwN//wsDf/8LE3//CxN//wsjf/8bI2//GzNv/xszb/8bQ2//G0Nv/xtTX/8bU1//G2Nf/xtjX/8bc1//G3NP/yuDT/8rg0//K5NP/yuTT/8roz//K6M//yuzP/8rsz//K7M//yvDL/87wy//O9Mv/zvTL/874y//O+Mf/zvzH/878x//PAMf/zwDH/88Ew//PBMP/0wjD/9MExnQAAAAAAAAAAAAAAAAAAAAAAAAAA76o6MO+tOf7wrTj/8K44//CuOP/wrzj/8K84//CwN//wsDf/8LE3//CxN//wsjf/8bI2//GzNv/xszb/8bQ2//G0Nv/xtTX/8bU1//G2Nf/xtjX/8bc1//G3NP/ytzT/8rg0//K4NP/yuTT/8rkz//K6M//yujP/8rsz//K7M//yvDL/8rwy//O9Mv/zvTL/874y//O+Mf/zvzH/878x//PAMf/zwDH/88Ew//PBMP/0wjD+9MIyLgAAAAAAAAAAAAAAAAAAAADvqzmr76w5/++tOf/wrTj/8K44//CuOP/yuVD//vry//768v/++vL//vry//768v/++vL//vry//768v/++vL//vry//768v/++vL//vry//768v/99eT/8bY1//G3NP/ytzT/8rg0//K4NP/yuTT/8rkz//K6M//yujP/8rsz//325f/++/H//vvx//325P/zvTL/874y//O+Mf/zvjH/878x//O/Mf/zwDH/88Ax//PBMP/zwC+nAAAAAAAAAAAAAAAA76c4IO+rOf3vrDn/76w5/++tOf/wrTn/8K44//CvO////vz///////////////////////////////////////////////////////////////////////768f/xtjX/8bY1//G3Nf/xtzT/8rg0//K4NP/yuTT/8rk0//K5M//yujP//vvy/////////////vrx//O8Mv/zvTL/870y//O+Mv/zvjH/878x//O/Mf/zwDH/88Ax//PBMPz3vTEfAAAAAAAAAADvqjt+76o6/++rOf/vqzn/76w5/++sOf/vrTn/8K04//zv2f///////////////////////////////////////////////////////////////////////vrx//G1Nf/xtTX/8bY1//G2Nf/xtzT/8rc0//K4NP/yuDT/8rk0//K5M//++/L////////////++vH/8rwy//K8Mv/zvTL/870y//O+Mv/zvjH/878x//O/Mf/zwDH/88Ax//LAMHoAAAAAAAAAAO6pOtjvqjr/76o6/++rOf/vqzn/76w5/++sOf/vrTn/+Nmj///////////////////////42Jv/99WU//fVlP/31ZT/99WU//fWlP/41pT/+NaU//jWlP/31Y3/8bQ2//G1Nf/xtTX/8bY1//G2Nf/xtzX/8rc0//K4NP/yuDT/8rk0//778v////////////768f/yuzP/8rwz//K8Mv/zvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/88Ax1QAAAADuqjwe76k6/++pOv/vqjr/76o6/++rOv/vqzn/76w5/++sOf/yulv///////////////////////XMf//wrzj/8LA3//CwN//wsTf/8LE3//CyN//xsjb/8bM2//GzNv/xtDb/8bQ2//G1Nf/xtTX/8bY1//G2Nf/xtzX/8bc0//K3NP/yuDT//vvy/////////////vrx//K6M//yuzP/8rsz//K8Mv/yvDL/870y//O9Mv/zvjL/874x//O/Mf/zvzH/9r8uHO+oOmHvqDv/76g6/++pOv/vqTr/76o6/++qOv/vqzn/76s5/++sOf/76Mn//////////////////fXl//G0Rf/wrzj/8LA3//CwN//wsTf/8LE3//CyN//wsjb/8bM2//bRhP/54a//+eGv//nhrv/54a7/+eGu//nirv/54q7/+eKu//rirv///fr//////////////fn/+uOt//rjrf/65K3/88NK//K8Mv/yvDL/870y//O9Mv/zvjL/874x//O+Mf/0vjFe7qc7lO6nO//uqDv/76g7/++pOv/vqTr/76o6/++qOv/vqzr/76s5//K6W////fr/////////////////++nJ//CvO//wrzj/8K84//CwN//wsDf/8LE3//CxN//wsjf/+uS3///////////////////////////////////////////////////////////////////////////////////////0x1n/8rsz//K7M//yvDL/87wy//O9Mv/zvTL/874y//O+MZHvpju77qc7/+6nO//uqDv/76g7/++pOv/vqTr/76o6/++qOv/vqjr/76s5//bQkP//////////////////////++fE//GxQf/wrzj/8K84//CwN//wsDf/8LE3//CxN//65Lj///////////////////////////////////////////////////////////////////////////////////////THWf/yujP/8rsz//K7M//yvDL/8rwy//O9Mv/zvTL/874yuO6lPN3upjv/7qY7/+6nO//upzv/76g7/++oOv/vqTr/76k6/++qOv/vqjr/76s5//jbqv///////////////////////O/Y//K4Uf/wrzj/8K84//CwN//wsDf/8LE3//TFbP///v3////////////+/Pf/+dyj//nfqP/54a7/+eGu//nhrv///fr//////////////fr/++e7//vnu//76Lv/9MJN//K6M//yujP/8rsz//K7M//yvDP/8rwy//O8Mv/zvTLb7qU87e6lPP/upjz/7qY7/+6nO//upzv/7qg7/++oO//vqTr/76k6/++qOv/vqjr/76s6//fUmv////7//////////////////vnx//TFcf/wrjj/8K84//CvOP/wsDf/8LA3//fXl//////////////////415b/8bM2//G0Nv/xtDb/8bU1//768v////////////768f/xtzT/8rg0//K4NP/yuDT/8rk0//K5M//yujP/8roz//K7M//yuzP/8rwy//K8MuvupDz57qU8/+6lPP/upjz/7qY7/+6nO//upzv/7qg7/++oO//vqDr/76k6/++pOv/vqjr/76o6//XJgP/++/b///////////////////79//fTk//wrjj/8K84//CvOP/wsDf/8LE5//voxP/////////////+/P/0xWb/8bM2//GzNv/xtDb//vry/////////////vrx//G2Nf/xtzT/8rc0//K4NP/yuDT/8rk0//K5M//yujP/8roz//K7M//yuzP/8rwy+O6jPPnupDz/7qQ8/+6lPP/upTz/7qY7/+6mO//upzv/7qc7/+6oO//vqDr/76k6/++pOv/vqjr/76o6//K5Wv/88d7///////////////////////jYoP/wrjj/8K84//CvOP/wrzj/8bVE//315f////////////336f/yuEb/8bM2//GzNv/++vL////////////++vH/8bY1//G2Nf/xtzX/8bc0//K4NP/yuDT/8rk0//K5NP/yujP/8roz//K7M//yuzP47qI97e6jPf/upDz/7qQ8/+6lPP/upTz/7qY8/+6mO//upzv/7qc7/+6oO//vqDv/76k6/++pOv/vqjr/76o6//CuQv/54bj///////////////////////bQjf/wrjj/8K44//CvOP/wrzj/879e///9+f////////////voxP/xsjf/8bM2//747P////////////768f/xtTX/8bY1//G2Nf/xtjX/8bc0//K3NP/yuDT/8rg0//K5NP/yuTP/8roz//K6M+vtoj3d7aM9/+6jPf/upDz/7qQ8/+6lPP/upTz/7qY8/+6mO//upjv/7qc7/+6nO//vqDv/76g6/++pOv/vqTr/76o6/++qOv/43K3//////////////////vz4//K1TP/wrjj/8K44//CvOP/wrzj/9s+G//////////////////fVkv/wsjb//fTj/////////////vrx//G0Nf/xtTX/8bU1//G2Nf/xtjX/8bc0//K3NP/yuDT/8rg0//K5NP/yuTP/8roz2+2hPbvtoj3/7aI9/+6jPf/uoz3/7qQ8/+6kPP/upTz/7qU8/+6mPP/upjv/7qc7/+6nO//uqDv/76g7/++pOv/vqTr/76o6/++rPP/879j/////////////////99SY//CtOf/wrTj/8K44//CuOP/wrzj/+eG0//////////////37//PCYv/88dz////////////++vH/8bQ2//G0Nv/xtTX/8bU1//G2Nf/xtjX/8bc1//G3NP/yuDT/8rg0//K5NP/zuDW47qA+lO2hPf/toj3/7aI9/+6jPf/uoz3/7qQ8/+6kPP/upTz/7qU8/+6mPP/upjv/7qc7/+6nO//uqDv/76g7/++oOv/vqTr/76k6//fVnf/////////////////65cL/76w5/++tOf/wrTj/8K44//CuOP/xsj///PDa/////////////fXm//3z4P////////////768f/xszb/8bQ2//G0Nv/xtDX/8bU1//G1Nf/xtjX/8bY1//G3NP/ytzT/8rg0//O5NZHtoD9h7aE+/+2hPf/toj3/7aI9/+2jPf/uoz3/7qQ8/+6kPP/upDz/7qU8/+6lPP/upjv/7qY7/+6nO//upzv/76g7/++oOv/vqTr/+Nmo//////////////////voyf/vrDn/76w5/++tOf/wrTj/8K44//CuOP/yulT//vrz/////////////////////////////vrx//GyNv/xszb/8bM2//G0Nv/xtDb/8bU1//G1Nf/xtjX/8bY1//G3Nf/xtzT/8bg0Xu6iPB7toD7/7aA+/+2hPv/toT3/7aI9/+2iPf/uoz3/7qM9/+6kPP/2zZT/99am//CyWP/upjz/7qY7/+6nO//upzv/7qg7//K3Xf/++vP/////////////////+d6y/++rOf/vqzn/76w5/++sOf/vrTn/8K04//CuOP/1x3b////+///////////////////////++fH/8LI3//GyNv/xszb/8bM2//G0Nv/xtDb/8bU1//G1Nf/xtjX/8bY1//G3Nf/uuzMeAAAAAO2fPtntoD7/7aA+/+2hPv/toT3/7aI9/+2iPf/toz3/7qM9//zx4v/////////+//zt2P/42q7/9tKb//bSmv/537j///36///////////////////////0xHX/76o6/++rOf/vqzn/76w5/++sOf/vrTn/8K04//CuOP/42qP///////////////////////758f/wsTf/8LI3//CyNv/xsjb/8bM2//GzNv/xtDb/8bQ1//G1Nf/xtTX/8bY01gAAAAAAAAAA7Z8+f+2fPv/toD7/7aA+/+2hPv/toT3/7aI9/+2iPf/ws2H/////////////////////////////////////////////////////////////////++jK/++pO//vqjr/76o6/++rOv/vqzn/76w5/++sOf/vrTn/8K05//CvO//7687//////////////////vnx//CwN//wsTf/8LE3//CyN//xsjb/8bM2//GzNv/xtDb/8bQ2//G1Nf/wtDZ7AAAAAAAAAADwmz4h7Z4//e2fPv/tnz7/7aA+/+2gPv/toT7/7aE9/++sUv/42bD//vr0//////////////////////////////////////////////////rjwP/wrUb/76k6/++pOv/vqTr/76o6/++qOv/vqzn/76s5/++sOf/vrDn/7605//G1S//+9+v////////////++fH/8LA3//CwN//wsTf/8LE3//CyN//xsjb/8bM2//GzNv/xtDb/8bQ2/e+1MR8AAAAAAAAAAAAAAADtnz6s7Z4//+2fPv/tnz7/7aA+/+2gPv/toT7/7aE9/+2iPf/tpUL/8r51//fTov/65sn//O/c//305//98+T/++rS//jYqv/yumb/7qc7/+6nO//vqDv/76g6/++pOv/vqTr/76o6/++qOv/vqzn/76s5/++sOf/vrDn/7605//TB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' />
+                </svg>
+              <!-- Third Party Logo Ends Here -->
+
+            </div>
+            <div class="logoBoxShadow"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </foreignObject>
+</svg>
